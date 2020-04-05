@@ -31,4 +31,15 @@ attr_reader :id
     @id = location['id'].to_i
   end
 
+  def self.all()
+  sql = 'SELECT * FROM manufacturer'
+  manufacturer_information = SqlRunner.run(sql)
+  return result = Manufacturer.map_items(manufacturer_information)
+end
+
+def self.map_items (manufacturer_information)
+  result = manufacturer_information.map {|manufacturer| Manufacturer.new(manufacturer)}
+return result
+end
+
 end
