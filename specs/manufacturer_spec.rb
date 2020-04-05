@@ -18,4 +18,12 @@ class ManufacturerTest < Minitest::Test
   assert_equal("Wholesale Jewellery", @manufacturer1.name)
 end
 
+def test_get_manufacturer_type
+  assert_equal("Wholesaler", @manufacturer1.type)
+end
+
+def test_get_active_boolean
+  assert_equal(true, @manufacturer1.active)
+end
+
 end
