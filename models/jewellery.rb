@@ -34,4 +34,15 @@ attr_accessor :name, :suitable_for_first, :type, :price, :size, :quantity
     @id = location['id'].to_i
   end
 
+  def self.all()
+    sql = "SELECT * FROM jewellery"
+    stock = SqlRunner.run(sql)
+    return Manufacturer.map_items(stock)
+  end
+
+  def self.map_items (stock_information)
+    result = stock_information.map {|manufacturer| Manufacturer.new(stock)}
+  return result
+  end
+
 end
