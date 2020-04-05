@@ -13,4 +13,22 @@ attr_reader :id
     @active = options['active']
   end
 
+  def save()
+    sql = "INSERT INTO manufacturer
+    (
+      name,
+      type,
+      active
+    )
+    VALUES
+    (
+      $1, $2, $3
+    )
+    RETURNING id"
+    values = [@name, @type, @active]
+    location = SqlRunner.run(
+    sql, values ).first
+    @id = location['id'].to_i
+  end
+
 end

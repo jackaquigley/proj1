@@ -1,15 +1,23 @@
 require ('pry')
 require_relative ('../models/jewellery')
 require_relative('../models/manufacturer')
-require_relative('./db/seeds')
+require_relative('../db/seeds')
 
-# manufacturer1.save
-#
-# manufacturer2.save
+manufacturer1 = Manufacturer.new({
+  'name' => 'Wholesale Jewellery',
+  'type' => 'Wholesaler',
+  'active' => true
+  })
 
-@manufacturers_all = Manufacturer.all
+manufacturer2 = Manufacturer.new({
+  'name' => 'Ebay',
+  'type' => 'Online',
+  'active' => true
+  })
 
-# Manufacturer.delete_all
+manufacturer1.save
+
+manufacturer2.save
 
 binding.pry
 nil
