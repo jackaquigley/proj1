@@ -5,26 +5,16 @@ require('pry-byebug')
 
 require_relative('../models/jewellery')
 require_relative('../models/manufacturer')
-require_relative('../models/shop')
 
 class ManufacturerTest < Minitest::Test
 
   def setup
-    @manufacturer1 = Manufacturer.new({
-      'name' => "Wholesale Jewellery",
-      'type' => 'Wholesaler', 'active' => true })
-  end
+      @manufacturer1 = Manufacturer.new({
+        'name' => "Wholesale Jewellery",
+        'type' => 'Wholesaler', 'active' => true })
+    end
 
   def test_get_manufacturer_name
-    assert_equal("Wholesale Jewellery", @manufacturer1.name)
-  end
-
-  def test_get_manufacturer_type
-    assert_equal("Wholesaler", @manufacturer1.type)
-  end
-
-  def test_get_active_boolean
-    assert_equal(true, @manufacturer1.active)
-  end
+  assert_equal("Wholesale Jewellery", @manufacturer1.name)
 
 end
