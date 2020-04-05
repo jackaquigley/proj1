@@ -42,4 +42,10 @@ def self.map_items (manufacturer_information)
 return result
 end
 
+def self.delete_all()
+  sql = 'DELETE FROM manufacturer'
+  values = []
+  SqlRunner.run(sql)
+end
+
 end
