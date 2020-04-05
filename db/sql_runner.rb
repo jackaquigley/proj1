@@ -1,26 +1,8 @@
-require('pg')
+DROP TABLE manufacturer;
 
-class SqlRunner
-
-  def self.run( sql, values = [])
-
-    begin
-
-      db = PG.connect({
-        dbname:'shop', host: 'localhost'
-        })
-
-        db.prepare("query", sql)
-
-        result = db.exec_prepared("query", values)
-
-      ensure
-        db.close if db != nil
-
-      end
-
-      return result
-
-  end
-
-end
+CREATE TABLE manufacturer (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR (255),
+  type VARCHAR (255),
+  active VARCHAR (255)
+);
