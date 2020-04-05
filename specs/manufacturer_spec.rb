@@ -16,5 +16,6 @@ class ManufacturerTest < Minitest::Test
 
   def test_get_manufacturer_name
   assert_equal("Wholesale Jewellery", @manufacturer1.name)
+end
 
 end
