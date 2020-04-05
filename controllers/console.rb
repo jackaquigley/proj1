@@ -15,9 +15,20 @@ manufacturer2 = Manufacturer.new({
   'active' => true
   })
 
-manufacturer1.save
+  studs = Jewellery.new({
+  'name' => 'Gold Studs',
+  'suitable_for_first' => true,
+  'type' => 'Earring',
+  'price' => 60,
+  'size' => '4mm',
+  'quantity' => 12
+  })
 
-manufacturer2.save
+  studs.save
+
+# manufacturer1.save
+#
+# manufacturer2.save
 
 binding.pry
 nil
