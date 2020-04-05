@@ -41,8 +41,14 @@ attr_accessor :name, :suitable_for_first, :type, :price, :size, :quantity
   end
 
   def self.map_items (stock_information)
-    result = stock_information.map {|manufacturer| Manufacturer.new(stock)}
+    result = stock_information.map {|manufacturer| Manufacturer.new(stoc k)}
   return result
   end
+
+  def self.delete_all()
+  sql = 'DELETE FROM jewellery'
+  values = []
+  SqlRunner.run(sql)
+end
 
 end
