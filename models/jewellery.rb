@@ -6,6 +6,7 @@ attr_accessor :name, :suitable_for_first, :type, :price, :size, :quantity
 attr_reader :id
 
   def initialize(options)
+    @id = options['id'].to_i if options['id']
     @name = options['name']
     @suitable_for_first = options['suitable_for_first']
     @type = options['type']
@@ -42,7 +43,7 @@ attr_reader :id
   end
 
   def self.map_items (stock_information)
-    result = stock_information.map {|stock| Jewellery.new(stock)}
+    result = stock_information.map {|stock_information| Jewellery.new(stock_information)}
   return result
   end
 
@@ -50,6 +51,14 @@ attr_reader :id
   sql = 'DELETE FROM jewellery'
   values = []
   SqlRunner.run(sql)
+end
+
+def self.find( id )
+  sql = "SELECT * FROM jewellery
+  WHERE id = $1"
+  values = [id]
+  results = SqlRunner.run( sql, values )
+  return Jewellery.new (results.first)
 end
 
 end

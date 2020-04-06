@@ -19,3 +19,8 @@ get '/jewellery' do
   @stock = Jewellery.all_stock()
     erb (:'jewellery/index')
   end
+
+get '/jewellery/:id' do
+  @jewellery = Jewellery.find(params['id'].to_i)
+  erb (:'jewellery/show')
+  end
