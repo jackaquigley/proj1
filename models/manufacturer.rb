@@ -42,6 +42,14 @@ def self.map_items (manufacturer_information)
 return result
 end
 
+def self.find( id )
+  sql = "SELECT * FROM manufacturer
+  WHERE id = $1"
+  values = [id]
+  results = SqlRunner.run( sql, values )
+  return Manufacturer.new (results.first)
+end
+
 def self.delete_all()
   sql = 'DELETE FROM manufacturer'
   values = []

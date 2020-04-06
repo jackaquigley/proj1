@@ -1,0 +1,12 @@
+<hr>
+
+<h4>Manufacturer List</h4>
+
+<% for vendor in @manufacturers %>
+<p> Name: <%= vendor.name %> </p>
+<p> Type: <%= vendor.type %> </p>
+<p> Active: <%= vendor.active.to_s.capitalize %> </p>
+
+<p>  <a href="/manufacturers/<%= vendor.id %>">Show order</a></p>
+
+<% end %>
