@@ -26,9 +26,9 @@ manufacturer2 = Manufacturer.new({
 
   studs.save
 
-# manufacturer1.save
-#
-# manufacturer2.save
+manufacturer1.save
+
+manufacturer2.save
 
 binding.pry
 nil
