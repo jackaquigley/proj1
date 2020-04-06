@@ -11,9 +11,9 @@ CREATE TABLE manufacturer (
 CREATE TABLE jewellery (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
-  suitable_for_first BOOLEAN,
+  suitable_for_first VARCHAR(255),
   type VARCHAR(255),
-  price FLOAT,
+  price INT,
   size VARCHAR(255),
   quantity INT
 );

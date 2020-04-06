@@ -17,14 +17,25 @@ manufacturer2 = Manufacturer.new({
 
   studs = Jewellery.new({
   'name' => 'Gold Studs',
-  'suitable_for_first' => true,
+  'suitable_for_first' => "true",
   'type' => 'Earring',
   'price' => 60,
   'size' => '4mm',
   'quantity' => 12
   })
 
-  studs.save
+  dermal = Jewellery.new({
+  'name' => 'Titanium Dermal Anchor',
+  'suitable_for_first' => "true",
+  'type' => 'Dermal Anchor',
+  'price' => 40,
+  'size' => '3mm',
+  'quantity' => 3
+})
+
+dermal.save_jewellery
+
+studs.save_jewellery
 
 manufacturer1.save
 

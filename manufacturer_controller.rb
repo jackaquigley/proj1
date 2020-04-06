@@ -14,3 +14,8 @@ get '/manufacturers/:id' do
   @manufacturer = Manufacturer.find(params['id'].to_i)
   erb( :"manufacturer/show" )
 end
+
+get '/jewellery' do
+  @stock = Jewellery.all_stock()
+    erb (:'jewellery/index')
+  end
